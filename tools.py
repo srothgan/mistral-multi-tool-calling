@@ -50,6 +50,7 @@ def control_music(action, song=None):
     }
     return str(value)
 
+# Tool list with descriptions for the AI model
 tools = [
     {
         "type": "function",

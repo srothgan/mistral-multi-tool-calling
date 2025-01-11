@@ -45,6 +45,7 @@ def generate_response(question):
     
     client = Mistral(api_key=api_key)
 
+    ## call the model 
     response = client.chat.complete(
         model=model,
         messages=messages,
@@ -53,20 +54,22 @@ def generate_response(question):
     )
     
     if response.choices[0].message.tool_calls:
-        # Handle tool call
+
+        # add the assistant message to the messages list
         messages.append({
             "role": "assistant",
             "content": None,
             "tool_calls": response.choices[0].message.tool_calls
         })
         
+        ## handle the tool call
         tool_call = response.choices[0].message.tool_calls[0]
         function_name = tool_call.function.name
         function_params = json.loads(tool_call.function.arguments)
         print("function_name: ", function_name, "\nfunction_params: ", function_params)
-        
         function_result = names_to_functions[function_name](**function_params)
-        # Add tool response to messages
+
+        ## add the tool message to the messages list
         messages.append({
             "role": "tool",
             "name": function_name,
@@ -74,12 +77,14 @@ def generate_response(question):
             "tool_call_id": tool_call.id
         })
 
+        ## call the model again
         response = client.chat.complete(
             model=model, 
             messages=messages
         )
         return response.choices[0].message.content
     else: 
+        ## add the assistant message to the messages list
         messages.append({
             "role": "assistant",
             "content": response.choices[0].message.content,
