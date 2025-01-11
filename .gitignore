@@ -1,0 +1,94 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and secrets
+.env
+*.env
+
+# Virtual environment
+venv/
+ENV/
+
+# Flask instance folder
+instance/
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Static cache
+*.pyc
+.cache/
+__pycache__/
+
+# Pipfile and Pipenv files
+Pipfile.lock
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# Pytest cache
+.pytest_cache/
+
+# Flask-SQLAlchemy database file
+*.sqlite3
+*.db
+
+# Flask generated files (e.g., session, cache, etc.)
+flask_session/
+uploads/
+
+# Local testing files
+# tests/
+# test/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+lib/
+lib64/
+sdist/
+wheels/
+develop-eggs/
+
+# Distribution / packaging
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+dist/
+build/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+
+# Pyre type checker
+.pyre/
+
+old/
