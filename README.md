@@ -25,7 +25,7 @@ This repository demonstrates how to use Mistral AI for multi-tool calling. It in
 2. Create a Python virtual environment (optional but recommended):
    ```bash
     python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    source venv/bin/activate  # On Windows: venv\Scripts\Activate.ps1
    ```
 3. Install dependencies:
    ```bash
